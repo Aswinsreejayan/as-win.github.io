@@ -1,0 +1,540 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aswin sreejayan</title>
+<link href="style.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="images/favicon.ico" rel="shortcut icon">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.17.0/dist/core.js" integrity="sha256-1WrDnglvsXh++Q1YCCWfvz6ILm4vOjLp1LvC4O3CE6I=" crossorigin="anonymous"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script> 
+<script src="http://picssel.com/scripts/fancybox2.1.5/jquery.fancybox.pack.js"></script> 
+<script src="http://picssel.com/scripts/fancybox2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+<meta charset="utf-8">
+<style>
+*, :before, :after {
+	box-sizing: border-box;
+}
+section {
+	text-align: center;
+}
+/*** RADIAL PROGRESS ***/
+/* Circumference = 2πr */
+/* π = 3.1415926535898 */
+/* r = 35 */
+
+svg.radial-progress {
+	height: auto;
+	max-width: 200px;
+	padding: 1em;
+	transform: rotate(-90deg);
+	width: 100%;
+}
+svg.radial-progress circle {
+	fill: rgba(0,0,0,0);
+	stroke: #fff;
+	stroke-dashoffset: 219.91148575129; /* Circumference */
+	stroke-width: 3.5;
+}
+svg.radial-progress circle.incomplete {
+	opacity: 0.6;
+	stroke: #252429!important;
+}
+svg.radial-progress circle.complete {
+	stroke-dasharray: 219.91148575129; /* Circumference */
+}
+svg.radial-progress text {
+	text-anchor: middle;
+	fill: #fff;
+}
+svg.radial-progress:nth-of-type(6n+1) circle {
+	stroke: #ffc209;
+}
+</style>
+<script>
+jQuery(function($){
+  $(".fancybox").fancybox({
+    modal: true,
+    helpers : { buttons: { } }
+  });
+  $(".filter").on("click", function () {
+    var $this = $(this);
+    // if we click the active tab, do nothing
+    if (!$this.hasClass("active")) {
+      $(".filter").removeClass("active");
+      $this.addClass("active"); // set the active tab
+      var $filter = $this.data("rel"); // get the data-rel value from selected tab and set as filter
+      $filter == 'all' ? // if we select "view all", return to initial settings and show all
+        $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() 
+        : // otherwise
+        $(".fancybox").fadeOut(0).filter(function () { 
+          return $(this).data("filter") == $filter; // set data-filter value as the data-rel value of selected tab
+        }).attr("data-fancybox-group", $filter).fadeIn(1000); // set data-fancybox-group and show filtered elements
+    } // if
+  }); // on
+}); // ready
+</script>
+</head>
+<body>
+<div class="container-fluid header sticky">
+  <div class="container-fluid mobile">
+    <nav class="navbar navbar-default homepage_nav"> 
+      
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-th"></span></button>
+        <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="Logo"></a></div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#home">Home</a></li>
+          <li class><a href="#about">About</a></li>
+          <li class><a href="#skills">Skills</a></li>
+          <li class><a href="#experience">Experience</a></li>
+          <li class=><a href="#projects">Projects</a></li>
+          <li class><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+  
+</div>
+<div class="container-fluid homepage_banner" id="home">
+  <div class="container homepage_content">
+    <div class="welcome">
+      <div class="row ">
+        <div class="col-md-12 homepage_title ">
+          <h3>Welcome To My Website </h3>
+          <h1>I'm <span id="title"></span> </h1>
+          <a href="#projects">View Projects</a><span class="homepage_text" style="margin-left:30px"> <a href="#contact">Hire Me</a></span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid about_section" id="about">
+  <div class="container about">
+    <h2>ABOUT ME</h2>
+    <hr>
+    <div class="row ">
+      <div class="col-md-12 col-sm-12 about_content ">
+        <div class="col-md-4 col-sm-4 image_box "><img class=" zoom_image img-responsive  img-border
+		" src="images/about-image.jpg" alt="about-image"></div>
+        <div class="col-md-8 col-sm-8 height_adjust">
+          <h3>I am<span style="color: #ffc209"> Aswin Sreejayan</span></h3>
+          <h6>UI/ UX Designer</h6>
+          <p>A bright, talented, ambitious and self motivated web designer with a strong technical background who possesses self discipline and the ability to work with the minimum of supervision. Able to play a key role throughout a sites development to ensure maximum accessibility, customer experience and usability. A quick learner who can absorb new ideas and can communicate clearly and effectively. A good team player who thrives on creating engaging creative solutions, is deadline orientated and has the ability to produce detailed technical specifications from client requirements.</p>
+          <a href="images/Aswin resume.pdf" target="_blank"  download>Download Resume</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid skills " id="skills">
+  <div class="container skills_content ">
+    <h2> MY SKILLS</h2>
+    <hr>
+    <script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+    <div class="row circle_first ">
+      <div class="col-md-4 col-xs-12 col-sm-4 PHOTOSHOP">
+        <svg class="radial-progress" data-percentage="65" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 120.58406743523136px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">65%</text>
+        </svg>
+        <h4>PHOTOSHOP</h4>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4 ILLUSTRATOR  ">
+        <svg class="radial-progress" data-percentage="50" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 100.3406954533613px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">50%</text>
+        </svg>
+        <h4>ILLUSTRATOR</h4>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4 XD ">
+        <svg class="radial-progress" data-percentage="50" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 80.58406743523136px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">50%</text>
+        </svg>
+        <h4>XD</h4>
+      </div>
+    </div>
+    <div class="row circle_second">
+      <div class="col-md-4 col-xs-12 col-sm-4 AFTER ">
+        <svg class="radial-progress" data-percentage="40" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 100px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">40%</text>
+        </svg>
+        <h4> AFTER EFFECTS </h4>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4 PREMIER ">
+        <svg class="radial-progress" data-percentage="40" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 80.58406743523136px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">40%</text>
+        </svg>
+        <h4> PREMIER</h4>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4 FIGMA ">
+        <svg class="radial-progress" data-percentage="40" viewBox="0 0 80 80">
+          <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+          <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 80.58406743523136px;"></circle>
+          <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">40%</text>
+        </svg>
+        <h4> FIGMA</h4>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> 
+    <script>
+$(function(){
+
+    // Remove svg.radial-progress .complete inline styling
+    $('svg.radial-progress').each(function( index, value ) { 
+        $(this).find($('circle.complete')).removeAttr( 'style' );
+    });
+
+    // Activate progress animation on scroll
+    $(window).scroll(function(){
+        $('svg.radial-progress').each(function( index, value ) { 
+            // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+            if ( 
+                $(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.75) &&
+                $(window).scrollTop() < $(this).offset().top + $(this).height() - ($(window).height() * 0.25)
+            ) {
+                // Get percentage of progress
+                percent = $(value).data('percentage');
+                // Get radius of the svg's circle.complete
+                radius = $(this).find($('circle.complete')).attr('r');
+                // Get circumference (2πr)
+                circumference = 2 * Math.PI * radius;
+                // Get stroke-dashoffset value based on the percentage of the circumference
+                strokeDashOffset = circumference - ((percent * circumference) / 100);
+                // Transition progress for 1.25 seconds
+                $(this).find($('circle.complete')).animate({'stroke-dashoffset': strokeDashOffset}, 1250);
+            }
+        });
+    }).trigger('scroll');
+
+});
+</script> 
+  </div>
+</div>
+<div class="container-fluid experience" id="experience">
+  <div class="container experience_details">
+    <h2> WORK EXPERIENCE</h2>
+    <hr>
+    <div class="just_center">
+      <div class="row ">
+        <div class="col-md-6 col-sm-6 location_height">
+          <div class="row">
+            <div class="col-md-3 col-sm-5"><img class="location-container img-responsive" src="images/exp-location.png" alt="image">
+              <div class="location_text"> 2017<br>
+                -<br>
+                2018 </div>
+            </div>
+            <div class="col-md-9 col-sm-7 location_content">
+              <h4>UI Designer </h4>
+              <h5>The Chandraz </h5>
+              <h6>Malapuram, Kerala </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 location_height2">
+          <div class="row">
+            <div class="col-md-3 col-sm-5 "><img class="location-container img-responsive" src="images/exp-location.png" alt="image">
+              <div class="location_text"> 2018<br>
+                -<br>
+                2020 </div>
+            </div>
+            <div class="col-md-9 col-sm-7 location_content">
+              <h4>UI/ UX Designer </h4>
+              <h5>Orbio Solutions </h5>
+              <h6>Bangalore </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 location_underline">
+    <hr>
+  </div>
+</div>
+<div class="container-fluid projects_main" id="projects">
+  <div class="container projects_sub">
+    <h2> PROJECTS</h2>
+    <hr>
+    <div id="wrap" class="cf">
+      <div class="col-md-12 col-sm-12 gallery_buttons">
+        <div id="galleryTab" class="cf"> <a data-rel="all" href="javascript:;" class="filter active">All</a> <a data-rel="anim" href="javascript:;" class="filter">Animation</a> <a data-rel="logo" href="javascript:;" class="filter">Branding</a> <a data-rel="web" href="javascript:;" class="filter">Web Design</a> <a data-rel="app" href="javascript:;" class="filter">App Design</a> <a data-rel="application" href="javascript:;" class="filter">Application Design</a> </div>
+      </div>
+      <div class="galleryWrap cf">
+        <div class="row first_section">
+          <div class="col-md-12 col-sm-12 ">
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Delta App</h3>
+                  <p><a href="projects/Delta.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/Delta.html' target="_blank" data-fancybox-group='gallery' data-filter='app'><img class="img-responsive " src='images/project-images/Delta.jpg' alt="Delta App" /></a></div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay ">
+                <div class="text">
+                  <h3>Redglee App</h3>
+                  <p><a href="projects/redglee app.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/redglee app.html' target="_blank" data-fancybox-group='gallery' data-filter='app'> <img  class="img-responsive" src="images/project-images/Redglee-app.jpg" alt='Redglee App' /></a> </div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay ">
+                <div class="text">
+                  <h3>Heal</h3>
+                  <p><a href="projects/Heal App.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/Heal App.html' target="_blank" data-fancybox-group='gallery' data-filter='app'> <img  class="img-responsive" src="images/project-images/Heal.jpg" alt='Heal' /></a> </div>
+          </div>
+        </div>
+        <div class="row second_section">
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Redglee Logo</h3>
+                  <p><a href="projects/redglee Logo.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/redglee Logo.html' target="_blank" data-fancybox-group='gallery' data-filter='logo'><img class="img-responsive" src='images/project-images/Redglee-logo.jpg' alt="Redglee Logo" /></a></div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>P-squared Logo</h3>
+                  <p><a href="projects/p-squared.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/p-squared.html' target="_blank" data-fancybox-group='gallery' data-filter='logo'> <img  class="img-responsive" src="images/project-images/P-squared.jpg" alt='P-squared' /></a> </div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Foodpot Logo</h3>
+                  <p><a href="projects/foodpot.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/foodpot.html' target="_blank" data-fancybox-group='gallery' data-filter='logo'> <img  class="img-responsive" src="images/project-images/Foodpot.jpg" alt='Foodpot' /></a> </div>
+          </div>
+        </div>
+        <div class="row third_section">
+          <div class="col-md-12 col-sm-12 col-sm-12">
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Nissan</h3>
+                  <p><a href="projects/Nissan.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/Nissan.html' target="_blank" data-fancybox-group='gallery' data-filter='application'><img class="img-responsive" src='images/project-images/Nissan.jpg' alt="Nissan" /></a></div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Ottixhow</h3>
+                  <p><a href="projects/ottix.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/ottix.html' target="_blank" data-fancybox-group='gallery' data-filter='application'> <img  class="img-responsive" src="images/project-images/Ottix.jpg" alt='Ottix' /></a> </div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Galaxy</h3>
+                  <p><a href="projects/galaxy.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/galaxy.html' target="_blank" data-fancybox-group='gallery' data-filter='application'> <img  class="img-responsive" src="images/project-images/Galaxy.jpg" alt='Galaxy' /></a> </div>
+          </div>
+        </div>
+        <div class="row fourth_section">
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-4 col-sm-4 first_gallery"> <a class='fancybox' href='' data-fancybox-group='gallery' data-filter='anim'>
+              <iframe width="100%" height="410px;" src="https://www.youtube.com/embed/q7jq79gEbyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-4 col-sm-4 first_gallery"> <a class='fancybox' href='' data-fancybox-group='gallery' data-filter='anim'>
+              <iframe width="100%" height="410px" src="https://www.youtube.com/embed/qnLhtpxOmQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-4 col-sm-4 first_gallery"> <a class='fancybox' href='' data-fancybox-group='gallery' data-filter='anim'>
+              <iframe width="100%" height="410px" src="https://www.youtube.com/embed/dU067BKZJOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row fifth_section">
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Redglee Website</h3>
+                  <p><a href="projects/redglee web.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/redglee web.html' target="_blank" data-fancybox-group='gallery' data-filter='web'><img class="img-responsive" src='images/project-images/Redglee-website.jpg' alt="Redglee Web" /></a></div>
+            <div class="col-md-4 col-sm-4 first_gallery">
+              <div class="overlay">
+                <div class="text">
+                  <h3>Wayanad Ambiance</h3>
+                  <p><a href="projects/Wayanad.html" target="_blank">View Project</a></p>
+                </div>
+              </div>
+              <a class='fancybox' href='projects/Wayanad.html' target="_blank" data-fancybox-group='gallery' data-filter='web'><img class="img-responsive" src='images/project-images/Wayanad ambiance.jpg' alt="wayanad Ambiance " /></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container-fluid contact" id="contact">
+  <div class="container contact_details">
+    <h2> GET IN TOUCH</h2>
+    <hr>
+    <div class="row contact_content">
+      <div class="col-md-12 col-sm-12">
+        <div class="col-md-6 col-sm-6 contact_text">
+          <h3>Contact Details</h3>
+          <h4>Phone:</h4>
+          <h5>+91 96330 02165</h5>
+          <h4>Email:</h4>
+          <h5>aswin92sreejayan@gmail.com</h5>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <form id="submit-form" method="" action=""  >
+            <div class="row">
+              <div class="col-md-12 side-adjust_small-device	">
+                <input type="text" name="Name" id="name" placeholder="Name" required>
+              </div>
+              <div class="col-md-12 side-adjust_small-device">
+                <input type="email" name="Email" id="email" placeholder="Email" required>
+              </div>
+              <div class="col-md-12 side-adjust_small-device">
+                <textarea name="Feedback" id="feedback" placeholder="Message" required></textarea>
+              </div>
+              <div class="col-md-12 contact_button"> <a href="delete-2.html">
+                <input  type="submit" id="submit-button" value="Send Message">
+                </a> </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid footer"> © Copyright Aswin.All Rights Reserved. </div>
+<script>
+jQuery(function(e){var t,n,r,i=navigator.userAgent.match(/msie/i)?true:false;if(!document.referrer==""){if(document.referrer.indexOf(location.protocol+"//"+location.host)===0){n=true}}if(history.length==0&&i||history.length==1&&!i){t=false}else{t=true}if(t){if(n){r='<a class="button" href="'+document.referrer+'"> &larr; Go back to previous page </a>'}else{r='<a '}e(r).appendTo("#wrap")}})
+</script> 
+<script>
+	
+	
+	window.addEventListener('scroll', doParallax);
+function doParallax(){
+   var positionY = window.pageYOffset/2;
+   document.body.style.backgroundPosition = "0 -" + positionY + "px";</script> 
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script> 
+<script>
+      new Typewriter('#title', {
+        strings: ['Aswin Sreejayan', 'UI/ UX Designer'],
+        speed:700,
+        delay: 15,
+		  backSpeed:0 ,
+		  typeSpeed:900,
+		  
+		  
+        autoStart: true,
+        loop: true,
+      });
+	</script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+<script>
+
+$(function() {
+  $(document).click(function (event) {
+    $('.navbar-collapse').collapse('hide');
+  });
+});
+	
+	
+	
+</script> 
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if 
+  });
+});
+</script> 
+<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwZFodUnWbb2sctoteo-26QZnNhBYJjnnf6CGoZE0EGEhzZ4Fm2ZxyjW1lVB-ruJze7Hw/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    window.location.href="projects/contact submission.html"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
