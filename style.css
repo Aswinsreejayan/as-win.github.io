@@ -888,7 +888,7 @@ hr.solid {
     margin-bottom: 0px;
   }
   .homepage_title h1 {
-    font-size: 5.1rem;
+    font-size: 35px;
   }
   .homepage_title a {
     font-size: 13px;
@@ -1112,7 +1112,7 @@ hr.solid {
     margin-bottom: 0px;
   }
   .homepage_title h1 {
-    font-size: 5.1rem;
+    font-size: 35px;
   }
   .homepage_title a {
     font-size: 13px;
@@ -1209,7 +1209,7 @@ hr.solid {
     margin-bottom: 30px;
   }
   .contact_details hr {
-    margin-bottom: 30px !important;
+    margin-bottom: 60px !important;
     width: 148px;
   }
   .contact_text h3 {
@@ -1336,7 +1336,7 @@ hr.solid {
     margin-bottom: 0px;
   }
   .homepage_title h1 {
-    font-size: 5.1rem;
+    font-size: 35px;
   }
   .homepage_banner {
     padding-left: 18px !important;
@@ -1437,7 +1437,7 @@ hr.solid {
     margin-bottom: 30px;
   }
   .contact_details hr {
-    margin-bottom: 30px !important;
+    margin-bottom: 60px !important;
     width: 148px;
   }
   .contact_text h3 {
