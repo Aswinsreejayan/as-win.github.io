@@ -772,7 +772,7 @@ input:required:focus, textarea:required:focus {
   margin-top: 55px;
 }
 .redglee_web-banner {
-  background-image: url("images/redglee-web-banner.jpg");
+  background-image: url("images/redglee-web-banner.png");
   height: 511px;
   background-position: center;
   background-size: cover;
@@ -780,7 +780,7 @@ input:required:focus, textarea:required:focus {
   background-attachment: fixed;
 }
 .wayanad-banner {
-  background-image: url("images/Wayanad-banner.jpg");
+  background-image: url("images/Wayanad-banner.png");
   height: 511px;
   background-position: center;
   background-size: cover;
@@ -791,7 +791,7 @@ input:required:focus, textarea:required:focus {
   margin-bottom: 40px !important;
 }
 .heal-banner {
-  background-image: url("images/heal-banner.jpg");
+  background-image: url("images/heal-banner.png");
   height: 511px;
   background-position: center;
   background-size: cover;
